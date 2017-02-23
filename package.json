@@ -1,0 +1,22 @@
+{
+  "name": "jwt-auth-server",
+  "version": "1.0.0",
+  "description": "Simple JWT authentication.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbarth17/auth-server.git"
+  },
+  "author": "Tommy Barth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbarth17/auth-server/issues"
+  },
+  "homepage": "https://github.com/tbarth17/auth-server#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
