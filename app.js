@@ -3,9 +3,16 @@
 
     const express = require('express');
     const app = express();
+    const jwt = require('express-jwt');
     const cors = require('cors');
 
     app.use(cors());
+
+    // middleware
+    const authCheck = jwt({
+      secret: new Buffer('YOUR-AUTH0-SECRET', 'base64'),
+      audience: 'YOUR-AUTH0-CLIENT-ID'
+    });
 
     app.get('/', function (req, res) {
         res.send('Hello World!');
@@ -22,7 +29,7 @@
     });
 
     // Private route
-    app.get('/api/user/private', (req,res)=>{
+    app.get('/api/user/private', authCheck, (req,res)=>{
         let deals = [
             'private',
             'stuff',
